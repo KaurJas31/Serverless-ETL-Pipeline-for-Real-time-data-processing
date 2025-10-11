@@ -9,7 +9,8 @@ Solution Architecture
 The architecture is entirely serverless and event-driven. It follows a simple, robust workflow that ensures data is processed immediately upon arrival.
 
 <!-- Add your architecture diagram screenshot here. A simple diagram showing S3 -> Lambda -> S3 would be perfect. -->
-![Pipeline Diagram](./ETL%20images/pipeline%20image)
+![Pipeline Image](ETL%20images/pipeline%20image.png)
+
 
 
 Workflow Steps:
