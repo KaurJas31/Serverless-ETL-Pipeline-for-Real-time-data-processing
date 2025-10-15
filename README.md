@@ -59,6 +59,11 @@ Project Setup and Configuration
 1. S3 Bucket Creation
 Two S3 buckets are required: one for raw data and one for the processed output.
 
+![Bucket](ETL%20images/bucket.png)
+
+![Bucket json file](ETL%20images/JSON.png)
+
+![ucket Parquet FileB](ETL%20images/Parquet.png)
 <!-- Add a screenshot of your S3 buckets in the AWS console. -->
 
 2. IAM Role for Lambda
@@ -68,11 +73,13 @@ AWSLambdaBasicExecutionRole: This policy allows the function to write logs to Cl
 
 Custom S3 Policy: An inline policy was added to grant s3:GetObject permissions on the raw bucket and s3:PutObject permissions on the processed bucket.
 
+
 <!-- Add a screenshot of the IAM role's permission policies. -->
 
 3. Lambda Function Setup
 The Lambda function is configured with the Python 3.9 runtime and linked to the IAM role created above. The code, along with its dependencies (Pandas, PyArrow), is packaged into a ZIP file and uploaded as a Lambda layer or directly.
 
+![Function setup](ETL%20images/added%20layer.png)
 <!-- Add a screenshot of your Lambda function's main configuration page. -->
 
 4. S3 Trigger Configuration
@@ -82,6 +89,8 @@ An S3 trigger is added to the Lambda function, pointing to the raw-data bucket. 
 
 Code Overview
 The core logic is contained within the lambda_function.py script.
+
+![Code Overview](ETL%20images/Code.png)
 
 lambda_handler(event, context): This is the main entry point. It parses the S3 event to get the bucket name and object key, reads the file using boto3, and calls the transformation function.
 
@@ -95,5 +104,7 @@ Upload the file to the 'raw-data' S3 bucket.
 Navigate to the 'processed-data' S3 bucket. Within seconds, a new Parquet file should appear in the destination folder.
 
 Optionally, check the CloudWatch logs for the Lambda function to see the print statements and confirm successful execution.
+![Logs](ETL%20images/logs.png)
+![Monitor Metrics](ETL%20images/monitor%20metrics.png)
 
 <!-- Add a screenshot showing the final Parquet file in the processed S3 bucket. -->
