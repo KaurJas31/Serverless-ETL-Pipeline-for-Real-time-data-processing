@@ -59,7 +59,7 @@ Project Setup and Configuration
 1. S3 Bucket Creation
 Two S3 buckets are required: one for raw data and one for the processed output.
 
-![Bucket](ETL%20images/bucket.png)
+![Bucket](ETL%20images/Bucket.png)
 
 ![Bucket json file](ETL%20images/JSON.png)
 
@@ -104,7 +104,8 @@ Upload the file to the 'raw-data' S3 bucket.
 Navigate to the 'processed-data' S3 bucket. Within seconds, a new Parquet file should appear in the destination folder.
 
 Optionally, check the CloudWatch logs for the Lambda function to see the print statements and confirm successful execution.
-![Logs](ETL%20images/logs.png)
+![Logs](ETL%20images/Logs.png)
+![Logs Result](ETL%20images/Logs%20result.png)
 ![Monitor Metrics](ETL%20images/monitor%20metrics.png)
 
 <!-- Add a screenshot showing the final Parquet file in the processed S3 bucket. -->
